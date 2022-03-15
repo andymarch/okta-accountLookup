@@ -13,7 +13,7 @@ example the username is a account number.
 
 ## Deploying the service
 
-This sample is based on serverless, copy and rename the env.example to .env.
+Set the values in the env bracket of serverless.
 Provide values for the Okta tenant and an API key able to view all users. The
 final parameter is a space seperated list of endpoints which can call this
 service (this is used to set CORS headers) this should be set to the custom

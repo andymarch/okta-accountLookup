@@ -8,7 +8,9 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
   environment:
-    ORIGINS: "https://account.examply.co.uk"
+    TENANT: "https://example.okta.com/"
+    API_TOKEN: "<api token>"
+    ORIGINS: "https://example.okta.com"
 
 resources:
   Resources:
