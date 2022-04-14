@@ -52,9 +52,7 @@ deploying the service.
         async function checkIdentifier(){            
         document.getElementsByClassName("button-primary")[0].disabled = true; 
         contractId = null
-        if(document.getElementById("contractField")){
-           document.getElementById("contractField").style.display = "none"; 
-        }
+
         
         if(document.getElementsByName("identifier")[0].value.includes("@")){
           const response = await fetch('<YOURENDPOINT>/accountLookup/'+document.getElementsByName("identifier")[0].value);
@@ -101,6 +99,12 @@ deploying the service.
           }
           if(responseJson.action === 'proceed'){
             identifier = responseJson.contractid
+          }
+        }
+        else{
+          if(document.getElementById("contractField")){
+           document.getElementById("contractField").style.display = "none";
+           document.getElementById("contractField").value = "";
           }
         }
         document.getElementsByClassName("button-primary")[0].disabled = false;
