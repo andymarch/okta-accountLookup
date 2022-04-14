@@ -51,7 +51,7 @@ deploying the service.
 
         async function checkIdentifier(){            
         document.getElementsByClassName("button-primary")[0].disabled = true; 
-        contractId = null
+        identifier = null
 
         
         if(document.getElementsByName("identifier")[0].value.includes("@")){
@@ -99,13 +99,15 @@ deploying the service.
           }
           if(responseJson.action === 'proceed'){
             identifier = responseJson.contractid
+            if (document.getElementById("contractField")) {
+                document.getElementById("contractField").style.display = "none";
+                document.getElementById("contractNumber").value = "";
+            }  
           }
         }
-        else{
-          if(document.getElementById("contractField")){
-           document.getElementById("contractField").style.display = "none";
-           document.getElementById("contractField").value = "";
-          }
+        else if (document.getElementById("contractField")) {
+            document.getElementById("contractField").style.display = "none";
+            document.getElementById("contractNumber").value = "";
         }
         document.getElementsByClassName("button-primary")[0].disabled = false;
       }
